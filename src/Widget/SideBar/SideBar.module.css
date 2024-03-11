@@ -1,0 +1,7 @@
+.SideBar{
+    height: 100vh;
+    width: 300px;
+    background: #455d81;
+    transition: width 0.2s ease-in-out;
+    position: relative;
+}

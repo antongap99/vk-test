@@ -2,14 +2,17 @@ import cn from "classnames";
 import style from './GroupList.module.css'
 import {useEffect, useState} from "react";
 import {GroupCard} from "../GroupCard/GroupCard.tsx";
-import {Group} from "../../Entity/Group/Group.ts";
-import mockService from "../../MockService/MockService.ts";
+import {Group} from "../../entities/Group/Group.ts";
+import mockService from "../../shared/MockService/MockService.ts";
 
 interface  GroupListProps {
     className?: string;
 
 }
-
+// TODO вынести groups в context
+// TODO Написать ui компонент сайдбар
+// TODO Написать компонент toolTip
+// TODO Написать компонент
 export const GroupList = ({className}: GroupListProps) =>{
 	const [groups, setGroups] = useState<Group[]>([]);
 
