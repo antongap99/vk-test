@@ -1,0 +1,14 @@
+.GroupCard {
+    padding: 6px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.GroupCardTitle{
+
+}
+.GroupCardStatus{
+
+}
