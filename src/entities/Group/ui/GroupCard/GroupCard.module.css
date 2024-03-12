@@ -2,10 +2,11 @@
     padding: 6px 12px;
     display: flex;
     flex-direction: column;
+    min-height: 200px;
 }
 
 .GroupCardWrapper {
-    min-width: 200px;
+    min-width: 300px;
     border: 1px solid #ddd;
     border-radius: 20px;
     padding: 20px;
@@ -17,6 +18,8 @@
     align-items: center;
     gap: 16px;
     margin: 0 0 10px;
+    flex-wrap: wrap;
+    white-space: pre-line;
 }
 
 .GroupCardTitle{
@@ -41,14 +44,18 @@
     color: #484b48;
     margin: 0;
 }
-
+.GroupCardMemberCount {
+    display: flex;
+}
 
 .GroupCardFriendsCount {
+    display: flex;
     border-radius: 6px;
     transition: background-color 0.3s ease-in-out;
     cursor: pointer;
     padding: 4px;
     margin: 0;
+    gap: 4px;
 }
 
 .GroupCardFriendsCount:hover {
@@ -60,6 +67,8 @@
     opacity: 0;
     height: 0;
     transition: opacity 0.3s ease-in-out;
+    overflow-y: auto;
+    max-height: 60px;
 }
 
 .FriendList_show {

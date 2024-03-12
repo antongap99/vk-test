@@ -2,16 +2,24 @@ import React, {createContext, ReactNode, useState} from 'react';
 import {FilterContextType, Filters} from "./types.ts";
 
 
+export enum Privacy {
+	Open= 'Открытые',
+	Closed= 'Закрытые',
+	All = 'Все'
+}
+
 
 const defaultFilters: Filters = {
-    closed: false,
-    avatarColor: 'any',
+    privacy: Privacy.All,
+    avatarColor: 'Все',
     hasFriends: false
 };
 
 export const FilterContext = createContext<FilterContextType>({
     filters: defaultFilters,
-    setFilters: () => {}
+    setFilters: () => {},
+    allColorOptions: [],
+    setAllColorOptions: () => {}
 });
 
 interface FilterProviderProps {
@@ -20,9 +28,10 @@ interface FilterProviderProps {
 
 export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     const [filters, setFilters] = useState<Filters>(defaultFilters);
+    const [allColorOptions, setAllColorOptions] = useState<string[]>([])
 
     return (
-        <FilterContext.Provider value={{ filters, setFilters }}>
+        <FilterContext.Provider value={{ filters, setFilters, allColorOptions, setAllColorOptions}}>
             {children}
         </FilterContext.Provider>
     );

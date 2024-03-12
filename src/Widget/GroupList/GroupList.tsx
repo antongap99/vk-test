@@ -8,7 +8,11 @@ interface  GroupListProps {
 }
 
 export const GroupList = ({className}: GroupListProps) =>{
-    const { groups } = useGroupList()
+    const { groups, isError, isLoading } = useGroupList()
+
+    if(isLoading) return <p>Загрузка...</p>
+
+    if(isError) return <p>Уппс. Ошибка</p>
 
     return  (
         <div className={cn(style.GroupList, className)}>

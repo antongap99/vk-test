@@ -1,18 +1,18 @@
 .GroupList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Для настольного компьютера */
     gap: 20px;
     padding: 0 20px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1440px) {
     .GroupList {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(2, 1fr); /* Для планшета */
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .GroupList {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Для мобильного */
     }
 }

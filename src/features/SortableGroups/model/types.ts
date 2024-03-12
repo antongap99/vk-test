@@ -9,4 +9,6 @@ export interface Filters {
 export interface FilterContextType {
 	filters: Filters;
 	setFilters: React.Dispatch<React.SetStateAction<Filters>>;
+	allColorOptions:string[],
+	setAllColorOptions: React.Dispatch<React.SetStateAction<string[]>>;
 }

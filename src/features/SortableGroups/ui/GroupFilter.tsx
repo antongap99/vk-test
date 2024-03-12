@@ -1,17 +1,22 @@
 import SelectFilter from "../../../shared/ui/Select/Select.tsx";
 import style from './GroupFilter.module.css'
 import {useFilters} from "../hooks/useFilters.ts";
+import {useMemo} from "react";
+import {Privacy} from "../model/context.tsx";
 
-enum FilterClosedValue {
-	All = 'all',
-	Public = 'public',
-	Private = 'private',
-}
+
 
 
 
 const GroupFilter = () => {
-    const { filters, setFilters } = useFilters();
+    const { filters, setFilters, allColorOptions} = useFilters();
+
+    const colorOptions = useMemo(() => Array.from(new Set(allColorOptions)).map((color) => {
+	    return {
+		    value: color,
+		    label: color
+	    }
+    }).concat([{value: "Все", label: 'Все'}]), [allColorOptions]);
 
     const handlePrivacyFilterChange = (value: string) => {
         setFilters((filters) => ({ ...filters, privacy: value }));
@@ -28,28 +33,23 @@ const GroupFilter = () => {
     return (
         <div className={style.groupFilterContainer}>
             <SelectFilter
-	            selectLabel="Privacy Filter"
+	            selectLabel="Открытые/Закрытые"
 			    value={filters.privacy}
 			    options={[
-				    { value: FilterClosedValue.All, label: 'All' },
-				    { value: FilterClosedValue.Public, label: 'Public' },
-				    { value: FilterClosedValue.Private, label: 'Private' }
+				    { value: Privacy.All, label: 'Все' },
+				    { value: Privacy.Open, label: 'Открытые' },
+				    { value: Privacy.Closed, label: 'Закрытые' }
 			    ]}
 			    onChange={handlePrivacyFilterChange}
 		    />
             <SelectFilter
-	            selectLabel='Avatar Color Filter'
+	            selectLabel='Цвета аватарок'
 			    value={filters.avatarColor}
-			    options={[
-				    { value: 'any', label: 'Any' },
-				    { value: 'red', label: 'Red' },
-				    { value: 'blue', label: 'Blue' }
-				    // Добавьте другие цвета, если необходимо
-			    ]}
+			    options={colorOptions}
 			    onChange={handleAvatarColorFilterChange}
             />
             <label  className={style.hasFriendsFilter}>
-                Has Friends Filter:
+                Есть ли друзья:
                 <input
 			        type="checkbox"
 			        checked={filters.hasFriends}

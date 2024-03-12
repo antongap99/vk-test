@@ -5,9 +5,9 @@ import './index.css'
 import {ErrorBoundary} from "./app/providers/ErrorBoundary";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-	  <ErrorBoundary>
-		  <App />
-	  </ErrorBoundary>
-  </React.StrictMode>,
+    <React.StrictMode>
+        <ErrorBoundary>
+            <App />
+        </ErrorBoundary>
+    </React.StrictMode>,
 )

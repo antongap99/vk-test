@@ -31,10 +31,20 @@ export const GroupCard = ({className, data}: GroupProps) =>{
 			                cn(style.GroupCardStatus, {[style.closed]: data.closed, [style.open]: !data.closed})
 		                }>{data.closed ? 'Открыта': 'Закрыта'}</p>
                     </div>
-                    {data.members_count > 0 && <p className={style.GroupCardMemberCount}>Число подписчиков: {data.members_count}</p>}
+                    {data.members_count > 0 && <p className={style.GroupCardMemberCount}>
+                        <span>Число подписчиков: </span>
+                        <span>
+                            {data.members_count}
+                        </span>
+                    </p>}
                     {data.friends &&
                         <div className={style.GroupFriends}>
-                            <p className={style.GroupCardFriendsCount} onClick={toggleFriendsHandler}>Число Друзей: {data.friends.length}</p>
+                            <p className={style.GroupCardFriendsCount} onClick={toggleFriendsHandler}>
+                                <span>Число Друзей: </span>
+                                <span>
+                                    {data.friends.length}
+                                </span>
+                            </p>
                             <ul className={cn(style.FriendList, {[style.FriendList_show]: showFriends})}>
                                 {data.friends.map((friend, index) => <li key={index}>{`${friend.first_name} ${friend.first_name}`}</li>)}
                             </ul>
