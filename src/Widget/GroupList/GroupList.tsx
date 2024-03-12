@@ -12,7 +12,7 @@ interface  GroupListProps {
 // TODO вынести groups в context
 // TODO Написать ui компонент сайдбар
 // TODO Написать компонент toolTip
-// TODO Написать компонент
+// TODO Использовать компонент SimpleCell vk-ui
 export const GroupList = ({className}: GroupListProps) =>{
 	const [groups, setGroups] = useState<Group[]>([]);
 
