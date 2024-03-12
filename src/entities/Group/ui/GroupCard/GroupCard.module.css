@@ -1,0 +1,68 @@
+.GroupCard {
+    padding: 6px 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.GroupCardWrapper {
+    min-width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 10px;
+}
+
+.GroupCardTitle{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.GroupCardStatus{
+    padding: 4px 6px;
+    border-radius: 6px;
+    margin: 0;
+}
+
+.GroupCardStatus.open {
+    background-color: #a9daa0;
+    color: #5a8358;
+}
+
+.GroupCardStatus.closed {
+    background-color: #b3babb;
+    color: #484b48;
+    margin: 0;
+}
+
+
+.GroupCardFriendsCount {
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 4px;
+    margin: 0;
+}
+
+.GroupCardFriendsCount:hover {
+    background-color: #87b6bd;
+}
+
+
+.FriendList {
+    opacity: 0;
+    height: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.FriendList_show {
+    height: auto;
+    opacity: 1;
+}

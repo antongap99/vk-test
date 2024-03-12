@@ -1,0 +1,13 @@
+.groupFilterContainer {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.hasFriendsFilter {
+    display: flex;
+    align-items: center;
+}

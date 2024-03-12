@@ -1,6 +1,18 @@
 .GroupList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .GroupList {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .GroupList {
+        grid-template-columns: 1fr;
+    }
 }

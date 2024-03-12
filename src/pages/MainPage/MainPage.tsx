@@ -10,7 +10,7 @@ interface  MainPageProps {
 export const MainPage = ({className, children}: MainPageProps) =>{
     return  (
         <div className={cn(style.MainPage, className)}>
-	        {children}
+			{children}
         </div>
     )
 }
