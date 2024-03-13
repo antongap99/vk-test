@@ -1,19 +1,8 @@
 import React, {createContext, ReactNode, useState} from 'react';
 import {FilterContextType, Filters} from "./types.ts";
+import {defaultFilters} from "./filters.ts";
 
 
-export enum Privacy {
-	Open= 'Open',
-	Closed= 'Closed',
-	All = 'All'
-}
-
-
-const defaultFilters: Filters = {
-    privacy: Privacy.All,
-    avatarColor: 'All',
-    hasFriends: false
-};
 
 export const FilterContext = createContext<FilterContextType>({
     filters: defaultFilters,

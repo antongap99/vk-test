@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 import mockService from '../../../shared/MockService/MockService'; // Путь к вашему сервису
 import { Group } from '../../../entities/Group/model/Group.ts';
 import {useFilters} from "../../../features/SortableGroups/hooks/useFilters.ts";
 import {Filters} from "../../../features/SortableGroups/model/types.ts";
-import {Privacy} from "../../../features/SortableGroups/model/context.tsx"; // Путь к модели группы
+import {FriendsStatus, Privacy} from "../../../features/SortableGroups/model/filters.ts";
 
 const useGroupList = () => {
     const {filters, setAllColorOptions} = useFilters();
@@ -56,7 +56,12 @@ const useGroupList = () => {
             return !(filters.avatarColor !== 'All' && group.avatar_color !== filters.avatarColor);
 
         }).filter(group => {
-	        return !(filters.hasFriends && (!group.friends || (group.friends && group.friends.length === 0)))
+            if (filters.hasFriends !== 'All') {
+                return filters.hasFriends === FriendsStatus.Has
+                    ? group.friends && group.friends.length
+                    : (!group.friends || (group.friends && !group.friends.length));
+            }
+            return true
         })
     };
 

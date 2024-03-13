@@ -1,9 +1,10 @@
 import React from "react";
+import {FriendsStatus, Privacy} from "./filters.ts";
 
 export interface Filters {
-	privacy: string;
+	privacy: Privacy;
 	avatarColor: string;
-	hasFriends: boolean;
+	hasFriends: FriendsStatus;
 }
 
 export interface FilterContextType {
