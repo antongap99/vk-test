@@ -53,7 +53,7 @@ const useGroupList = () => {
             return true;
         }
         ).filter(group => {
-            return !(filters.avatarColor !== 'Все' && group.avatar_color !== filters.avatarColor);
+            return !(filters.avatarColor !== 'All' && group.avatar_color !== filters.avatarColor);
 
         }).filter(group => {
 	        return !(filters.hasFriends && (!group.friends || (group.friends && group.friends.length === 0)))

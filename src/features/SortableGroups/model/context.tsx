@@ -3,15 +3,15 @@ import {FilterContextType, Filters} from "./types.ts";
 
 
 export enum Privacy {
-	Open= 'Открытые',
-	Closed= 'Закрытые',
-	All = 'Все'
+	Open= 'Open',
+	Closed= 'Closed',
+	All = 'All'
 }
 
 
 const defaultFilters: Filters = {
     privacy: Privacy.All,
-    avatarColor: 'Все',
+    avatarColor: 'All',
     hasFriends: false
 };
 

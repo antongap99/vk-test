@@ -29,7 +29,7 @@ export const GroupCard = ({className, data}: GroupProps) =>{
                         <h2 className={style.GroupCardTitle}>Группа {data.name}</h2>
                         <p className={
 			                cn(style.GroupCardStatus, {[style.closed]: data.closed, [style.open]: !data.closed})
-		                }>{data.closed ? 'Открыта': 'Закрыта'}</p>
+		                }>{data.closed ? 'Закрыта' : 'Открыта'}</p>
                     </div>
                     {data.members_count > 0 && <p className={style.GroupCardMemberCount}>
                         <span>Число подписчиков: </span>

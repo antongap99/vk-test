@@ -16,7 +16,7 @@ const GroupFilter = () => {
 		    value: color,
 		    label: color
 	    }
-    }).concat([{value: "Все", label: 'Все'}]), [allColorOptions]);
+    }).concat([{value: "All", label: 'Все'}]), [allColorOptions]);
 
     const handlePrivacyFilterChange = (value: string) => {
         setFilters((filters) => ({ ...filters, privacy: value }));
